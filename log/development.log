@@ -885,3 +885,31 @@ Processing by SongsController#edit as HTML
   Rendered songs/_form.html.erb (3.8ms)
   Rendered songs/edit.html.erb within layouts/application (4.6ms)
 Completed 200 OK in 32ms (Views: 12.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/artists/1231/songs/1/edit" for 66.69.239.17 at 2017-12-20 18:53:24 +0000
+Cannot render console from 66.69.239.17! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#edit as HTML
+  Parameters: {"artist_id"=>"1231", "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1231]]
+Redirected to http://165.227.90.214:53946/artists
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/artists" for 66.69.239.17 at 2017-12-20 18:53:24 +0000
+Cannot render console from 66.69.239.17! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#index as HTML
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/artists/1/songs/12423/edit" for 66.69.239.17 at 2017-12-20 18:53:31 +0000
+Cannot render console from 66.69.239.17! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#edit as HTML
+  Parameters: {"artist_id"=>"1", "id"=>"12423"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."artist_id" = ? AND (12423) LIMIT 1[0m  [["artist_id", 1]]
+  Rendered songs/_form.html.erb (2.4ms)
+  Rendered songs/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.3ms)
